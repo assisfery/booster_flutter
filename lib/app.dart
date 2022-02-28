@@ -1,3 +1,4 @@
+import 'package:booster/modules/sign/sign_page.dart';
 import 'package:booster/modules/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,8 @@ class App extends StatelessWidget {
       routes: {
         "/" : (context) => SplashPage(),
         "/intro" : (context) => IntroPage(),
-        "/login" : (context) => LoginPage()
+        "/login" : (context) => LoginPage(),
+        "/sign-in" : (context) => SignPage()
       },
 
     );
