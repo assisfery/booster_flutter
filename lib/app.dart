@@ -1,3 +1,4 @@
+import 'package:booster/modules/home/home_page.dart';
 import 'package:booster/modules/sign/sign_page.dart';
 import 'package:booster/modules/splash/splash_page.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,8 @@ class App extends StatelessWidget {
         "/" : (context) => SplashPage(),
         "/intro" : (context) => IntroPage(),
         "/login" : (context) => LoginPage(),
-        "/sign-in" : (context) => SignPage()
+        "/sign-in" : (context) => SignPage(),
+        "/home" : (context) => HomePage()
       },
 
     );

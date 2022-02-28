@@ -54,8 +54,7 @@ class LoginPage extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              print(emailController.text + "\n");
-              print(passwordController.text + "\n\n\n");
+              controller.login(context, emailController.text, passwordController.text);
             },
             child: Text("Login"),
             style: AppButtons.primary,

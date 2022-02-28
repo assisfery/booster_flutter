@@ -7,4 +7,7 @@ class AppColors
 
   static final titleBody = Color(0xFF34495E);
   static final textDark = Color(0xFF34495E);
+
+  static final bottomNavBackground = Color(0xFF34495E);
+  static final floatingActionBackground = Color(0xFF9b59b6);
 }
