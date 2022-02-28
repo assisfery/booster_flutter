@@ -21,6 +21,7 @@ class SignPage extends StatelessWidget {
     var reenterPasswordController = TextEditingController();
 
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

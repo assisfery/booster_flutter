@@ -19,6 +19,7 @@ class LoginPage extends StatelessWidget {
     var passwordController = TextEditingController();
 
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: Form(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

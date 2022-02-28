@@ -1,5 +1,6 @@
 import 'package:booster/modules/intro/intro_controller.dart';
 import 'package:booster/shared/themes/app_buttons.dart';
+import 'package:booster/shared/themes/app_colors.dart';
 import 'package:booster/shared/themes/app_images.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -46,6 +47,7 @@ class IntroPage extends StatelessWidget {
     var controller = IntroController();
 
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: SingleChildScrollView(
         child: Column(
           children: [
