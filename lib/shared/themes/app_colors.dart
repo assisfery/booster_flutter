@@ -6,4 +6,5 @@ class AppColors
   static final primary = Color(0xFF34495E);
 
   static final titleBody = Color(0xFF34495E);
+  static final textDark = Color(0xFF34495E);
 }

@@ -15,7 +15,7 @@ class AppButtons {
 
 
   static final secondary = ButtonStyle(
-      foregroundColor: MaterialStateProperty.all(AppColors.primary),
+      foregroundColor: MaterialStateProperty.all(AppColors.textDark),
       padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(vertical: 16, horizontal: 32))
       );
 }
