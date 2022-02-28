@@ -1,3 +1,5 @@
+import 'package:booster/modules/intro/intro_controller.dart';
+import 'package:booster/shared/themes/app_buttons.dart';
 import 'package:booster/shared/themes/app_images.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -40,6 +42,9 @@ class IntroPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    var controller = IntroController();
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -60,7 +65,9 @@ class IntroPage extends StatelessWidget {
                 );
               }).toList(),
             ),
-            TextButton(onPressed: () {}, child: Text("Get Started"))
+            TextButton(onPressed: () {
+              controller.getStarted(context);
+            }, child: Text("Get Started"), style: AppButtons.primary,)
           ],
         ),
       ),

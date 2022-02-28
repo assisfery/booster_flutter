@@ -2,6 +2,7 @@ import 'package:booster/modules/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 
 import 'modules/intro/intro_page.dart';
+import 'modules/login/login_page.dart';
 
 class App extends StatelessWidget {
   const App({ Key? key }) : super(key: key);
@@ -14,7 +15,8 @@ class App extends StatelessWidget {
 
       routes: {
         "/" : (context) => SplashPage(),
-        "/intro" : (context) => IntroPage()
+        "/intro" : (context) => IntroPage(),
+        "/login" : (context) => LoginPage()
       },
 
     );
