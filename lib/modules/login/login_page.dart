@@ -15,6 +15,9 @@ class LoginPage extends StatelessWidget {
 
     final controller = LoginController();
 
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -31,6 +34,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
           child: TextField(
             decoration: AppInputs.primary("Email"),
+            controller: emailController,
           ),
         ),
         Padding(
@@ -38,10 +42,14 @@ class LoginPage extends StatelessWidget {
           child: TextField(
             decoration: AppInputs.primary("Password"),
             obscureText: true,
+            controller: passwordController,
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            print(emailController.text + "\n");
+            print(passwordController.text + "\n\n\n");
+          },
           child: Text("Login"),
           style: AppButtons.primary,
         ),

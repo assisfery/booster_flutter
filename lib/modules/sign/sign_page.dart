@@ -15,6 +15,11 @@ class SignPage extends StatelessWidget {
 
     final controller = SignController();
 
+    var nameController = TextEditingController();
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
+    var reenterPasswordController = TextEditingController();
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -31,12 +36,14 @@ class SignPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
           child: TextField(
             decoration: AppInputs.primary("Name"),
+            controller: nameController,
           ),
         ),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
           child: TextField(
             decoration: AppInputs.primary("Email"),
+            controller: emailController,
           ),
         ),
         Padding(
@@ -44,6 +51,7 @@ class SignPage extends StatelessWidget {
           child: TextField(
             decoration: AppInputs.primary("Password"),
             obscureText: true,
+            controller: passwordController,
           ),
         ),
         Padding(
@@ -51,10 +59,16 @@ class SignPage extends StatelessWidget {
           child: TextField(
             decoration: AppInputs.primary("Re-enter password"),
             obscureText: true,
+            controller: reenterPasswordController,
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            print(nameController.text + "\n");
+            print(emailController.text + "\n");
+            print(passwordController.text + "\n");
+            print(reenterPasswordController.text + "\n\n\n");
+          },
           child: Text("Sign In"),
           style: AppButtons.primary,
         ),
