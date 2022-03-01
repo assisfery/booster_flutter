@@ -21,6 +21,7 @@ class _IntroPageState extends State<IntroPage> {
   int currentSlide = 0;
   final CarouselController _carouselController = CarouselController();
 
+  final slidesIndex = [0, 1];
   final slides = [
     Column(children: [
       SvgPicture.asset(
@@ -73,7 +74,7 @@ class _IntroPageState extends State<IntroPage> {
                       currentSlide = index;
                     });
                   }),
-              items: [0, 1].map((i) {
+              items: slidesIndex.map((i) {
                 return Builder(
                   builder: (BuildContext context) {
                     return slides[i];
@@ -83,7 +84,7 @@ class _IntroPageState extends State<IntroPage> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [0, 1].asMap().entries.map((entry) {
+              children: slidesIndex.asMap().entries.map((entry) {
                 return GestureDetector(
                   onTap: () {
                     setState(() {
