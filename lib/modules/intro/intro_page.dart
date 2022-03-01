@@ -9,8 +9,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../shared/themes/app_texts.dart';
 
-class IntroPage extends StatelessWidget {
+class IntroPage extends StatefulWidget {
   IntroPage({Key? key}) : super(key: key);
+
+  @override
+  State<IntroPage> createState() => _IntroPageState();
+}
+
+class _IntroPageState extends State<IntroPage> {
+
+  int currentSlide = 0;
+  final CarouselController _carouselController = CarouselController();
 
   final slides = [
     Column(children: [
@@ -43,7 +52,6 @@ class IntroPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     var controller = IntroController();
 
     return Scaffold(
@@ -57,8 +65,14 @@ class IntroPage extends StatelessWidget {
                   child: Text("Welcome to Booster", style: AppTexts.titleBody)),
             ),
             CarouselSlider(
-              options:
-                  CarouselOptions(height: 400.0, enableInfiniteScroll: false),
+              options: CarouselOptions(
+                  height: 400.0,
+                  enableInfiniteScroll: false,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      currentSlide = index;
+                    });
+                  }),
               items: [0, 1].map((i) {
                 return Builder(
                   builder: (BuildContext context) {
@@ -67,13 +81,45 @@ class IntroPage extends StatelessWidget {
                 );
               }).toList(),
             ),
-            TextButton(onPressed: () {
-              controller.getStarted(context);
-            }, child: Text("Get Started"), style: AppButtons.primary,)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [0, 1].asMap().entries.map((entry) {
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      //currentSlide = entry.key;
+                      //_carouselController.animateToPage(entry.key);
+                    });
+                  },
+                  child: Container(
+                    width: 12.0,
+                    height: 12.0,
+                    margin:
+                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: (Theme.of(context).brightness == Brightness.dark
+                                ? Colors.white
+                                : Colors.black)
+                            .withOpacity(
+                                currentSlide == entry.key ? 0.9 : 0.4)),
+                  ),
+                );
+              }).toList(),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 18.0),
+              child: TextButton(
+                onPressed: () {
+                  controller.getStarted(context);
+                },
+                child: Text("Get Started"),
+                style: AppButtons.primary,
+              ),
+            )
           ],
         ),
       ),
     );
   }
-  
 }
