@@ -1,6 +1,10 @@
 # booster
 This is a start point for your next flutter project.
 
+## Project
+The below diagram represents the project big picture.
+![Big Picture](/docs/project.png)
+
 ## Getting Started
 
 To use that project as your start point, follow those steps:
